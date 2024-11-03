@@ -23,6 +23,7 @@ function PlayingVideo() {
       setVideo(res);
     });
   };
+  
   const fetchRelatedVideo = () => {
     fetchData(`video/related-contents/?id=${id}`).then((res) => {
       console.log(res);
@@ -53,7 +54,8 @@ function PlayingVideo() {
                 <div className="flex h-11 w-11 rounded-full overflow-hidden">
                   <img
                     className="h-full w-full object-cover"
-                    src={video?.author?.avatar[0]?.url}
+                    src={video?.author?.avatar?.[0]?.url} // Safely access avatar
+                    alt="Author Avatar" // Add alt text for accessibility
                   />
                 </div>
               </div>
@@ -61,7 +63,7 @@ function PlayingVideo() {
                 <div className="flex flex-col ml-3">
                   <div className="text-md font-semibold flex items-center">
                     {video?.author?.title}
-                    {video?.author?.badges[0]?.type === "VERIFIED_CHANNEL" && (
+                    {video?.author?.badges?.[0]?.type === "VERIFIED_CHANNEL" && (
                       <BsFillCheckCircleFill className="text-white/[0.5] text-[12px] ml-1" />
                     )}
                   </div>

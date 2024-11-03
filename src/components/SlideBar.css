@@ -1,0 +1,30 @@
+.sidebar {
+    width: 400px;
+    background-color: #ffffff; /* or #202020 for dark mode */
+    color: #606060;
+    height: calc(100vh - 6.625rem);
+}
+
+.sidebar-item {
+    font-size: 14px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.sidebar-item:hover {
+    background-color: #f1f1f1; /* or #383838 for dark mode */
+}
+
+.sidebar-icon {
+    margin-right: 16px;
+    font-size: 1.25rem; /* Adjust icon size if needed */
+}
+
+.divider {
+    border-top: 1px solid #e0e0e0; /* or #444 for dark mode */
+    margin: 8px 0;
+}
